@@ -14,12 +14,12 @@ for(let i=500; i<510;i++){
     .then(data => {
         // Étape 4: Traitement de la réponse
         // console.log(data)
-        console.log(data['title']) 
-        
+        console.log(data) 
     })
     .catch(error => {
         console.error('Fetch error:', error);
     });
     
 }
+
 
