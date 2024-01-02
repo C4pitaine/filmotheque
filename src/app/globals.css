@@ -6,3 +6,12 @@
 .slide{
     min-height:100vh;
 }
+
+.inputNotValid{
+    background-color: red;
+}
+
+.invisible{
+    display: none;
+}
+
