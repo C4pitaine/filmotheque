@@ -7,6 +7,8 @@ export default function contact() {
         const textarea = document.querySelector('textarea')
         const flashContact = document.querySelector('#flashContact')
 
+        flashContact.classList.add('invisible')
+
         let compteur = 0 
 
         input.forEach(input=>{
@@ -26,16 +28,13 @@ export default function contact() {
             textarea.classList.remove('inputNotValid')
             compteur++
         }
-
+        
         if(compteur==4){
             textarea.value = ""
-
             input.forEach(input=>{
                 input.value = ""
             })
-            
             flashContact.classList.remove('invisible')
-
         }
     }
 
