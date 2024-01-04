@@ -7,6 +7,12 @@
     min-height:100vh;
 }
 
+.wrapper{
+    width:80%;
+    margin: 0 auto;
+    overflow: hidden;
+}
+
 .inputNotValid{
     background-color: red;
 }
@@ -14,4 +20,10 @@
 .invisible{
     display: none;
 }
+
+.carte{
+    margin: 25px;
+}
+
+
 
