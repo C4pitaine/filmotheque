@@ -15,12 +15,13 @@ for(let i=500; i<510;i++){
         // Étape 4: Traitement de la réponse
         // console.log(data)
         console.log(data) 
-        //poster_path pour les images
+        //poster_path pour les images 
+        // https://image.tmdb.org/t/p/w500
     })
     .catch(error => {
         console.error('Fetch error:', error);
     });
-    
+
 }
 
 
