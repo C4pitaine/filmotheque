@@ -9,7 +9,7 @@ export default async function reviews() {
     return(
         <>
             <div className='wrapper'>
-                <h1 className="text-white mt-2 text-2xl">Reviews</h1>
+                <h1 className="text-white mt-2 text-2xl">Nos films</h1>
                 <div className="flex flex-wrap justify-center items-center">
                     {reviews.map((review)=>(
                         <div key={review.title} className="carte">
@@ -26,9 +26,6 @@ export default async function reviews() {
                     ))}
                 </div>
             </div>
-            
-            
-            
         </>
     )
 }

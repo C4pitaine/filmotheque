@@ -17,3 +17,10 @@ export async function getReviews() {
         throw error;
     }
 }
+
+export async function getLastReviews() {
+    const lastReviews = await getReviews()
+
+    const tabLastReviews= [lastReviews[0],lastReviews[1],lastReviews[2],lastReviews[4]]
+    return tabLastReviews
+}
