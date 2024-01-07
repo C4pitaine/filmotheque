@@ -44,6 +44,11 @@ export async function getResearch(research) {
     }
 }
 
+export async function getFilm(research) {
+    const film = await getResearch(research)
+    return film[0]
+}
+
 /**
  * Permet d'afficher sur la HomePage les derniers films 
  */

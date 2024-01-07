@@ -1,13 +1,13 @@
 'use client'
-import { getResearch } from "@/lib/review"
+import { getFilm } from "@/lib/review"
 
 export default async function ReviewPage( {params: {title}}){
-    const review = await getResearch(title)
+    const review = await getFilm(title)
     console.log(review)
     return(
         <>
             <div className='wrapper'>
-                
+                {review.title}
             </div>
         </>
     )
