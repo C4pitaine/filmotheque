@@ -1,25 +1,26 @@
-const API_KEY = "2e2c61ff85593ad2cd79c1bd46d0e7fa"
+const API_KEY = "2e2c61ff85593ad2cd79c1bd46d0e7fa";
 
-// Étape 1: Utilisation de l'API Fetch
-fetch("https://api.themoviedb.org/3/movie/upcoming?api_key="+API_KEY)
-.then(response => {
-    // Étape 2: Vérification du statut de la réponse
-    if (!response.ok) {
-        throw new Error(`HTTP error! Status: ${response.status}`);
+    var test = "Aquaman and"
+    const research = test.replace(/ /g, "+")
+
+    try {
+        const response = await fetch("https://api.themoviedb.org/3/search/movie?query="+research+"&api_key="+ API_KEY);
+
+        if (!response.ok) {
+            throw new Error(`HTTP error! Status: ${response.status}`);
+        }
+
+        const data = await response.json();
+
+
+        console.log(data.results) ;
+    } catch (error) {
+        console.error('Fetch error:', error);
+        throw error;
     }
-    // Étape 3: Renvoi de la réponse sous forme de JSON
-    return response.json();
-})
-.then(data => {
-    // Étape 4: Traitement de la réponse
-    // console.log(data)
-    console.log(data) 
-    //poster_path pour les images 
-    // https://image.tmdb.org/t/p/w500
-})
-.catch(error => {
-    console.error('Fetch error:', error);
-});
+
+
+
 
 
 
