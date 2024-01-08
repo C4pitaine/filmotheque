@@ -25,5 +25,18 @@
     margin: 25px;
 }
 
+.filmImage{
+    margin:50px 25px;
+    width:300px;
+    object-fit: cover;
+}
+
+.filmDescription{
+    width:70%;
+    margin: 50px 25px;
+}
+
+
+
 
 

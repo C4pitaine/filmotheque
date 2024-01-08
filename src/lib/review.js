@@ -26,9 +26,9 @@ export async function getReviews() {
  */
 export async function getResearch(research) {
 
-    const film = research.replace(/ /g, "+") // permet de remplacer les espaces par des +
+    //const film = research.replace(/ /g, "+") // permet de remplacer les espaces par des +
     try {
-        const response = await fetch("https://api.themoviedb.org/3/search/movie?query="+film+"&api_key="+ API_KEY);
+        const response = await fetch("https://api.themoviedb.org/3/search/movie?query="+research+"&api_key="+ API_KEY);
 
         if (!response.ok) {
             throw new Error(`HTTP error! Status: ${response.status}`);

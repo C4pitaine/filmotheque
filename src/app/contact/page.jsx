@@ -114,9 +114,15 @@ export default function contact() {
                     Envoyer
                     </button>
                 </div>
-
+            </div>  
             </div>
+            <div className="wrapper flex items-center justify-center">
+                <div>
+                   <p className="text-white mb-2">Numéro de téléphone : 0123456789</p>
+                   <p className="text-white">Adresse E-mail: filmotheque@examen.fictif</p>
+                </div>
             </div>
+           
         </>
     )
 }
