@@ -1,6 +1,6 @@
 import Link from "next/link"
 import { getLastReviews } from "@/lib/review"
-
+import Image from "next/image"
 
 export default async function Homepage(){
     const lastReviews = await getLastReviews()
@@ -8,7 +8,7 @@ export default async function Homepage(){
     return (
         <>
             <div className='wrapper'>
-                <h2 className="text-white mt-5 mb-5 text-2xl">Bienvenue à la Filmothèque - Nous vous donnons des informations sur les derniers films du moment</h2>
+                <h2 className="text-white mt-5 mb-5 text-2xl">Bienvenue à la Filmothèque - Ici vous trouverez les films que vous recherchez</h2>
                 <div className="flex">
                     <h3 className="text-white mt-2 me-3 text-2xl">Nos derniers films ou</h3>
                     <Link href="/reviews" className="text-white bg-blue-700 hover:bg-blue-800 focus:ring-4 focus:ring-blue-300 font-medium rounded-lg text-sm px-5 py-2.5 me-2 mb-2 dark:bg-blue-600 dark:hover:bg-blue-700 focus:outline-none dark:focus:ring-blue-800">Découvrir plus</Link>

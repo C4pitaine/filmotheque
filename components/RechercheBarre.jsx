@@ -1,3 +1,4 @@
+'use client'
 import { useState } from "react"
 
 export default function RechercheBarre() {
@@ -9,7 +10,7 @@ export default function RechercheBarre() {
     }
     const handleClick = () =>{
         {setClicked(true)}
-        console.log(inputValue)
+        // console.log(inputValue)
     }
 
 
