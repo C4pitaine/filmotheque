@@ -12,8 +12,6 @@ export async function getReviews() {
         }
 
         const data = await response.json();
-
-
         return data.results;
     } catch (error) {
         console.error('Fetch error:', error);
@@ -33,10 +31,7 @@ export async function getResearch(research) {
         if (!response.ok) {
             throw new Error(`HTTP error! Status: ${response.status}`);
         }
-
         const data = await response.json();
-
-
         return data.results;
     } catch (error) {
         console.error('Fetch error:', error);
