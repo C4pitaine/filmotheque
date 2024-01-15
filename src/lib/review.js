@@ -5,7 +5,7 @@ const API_KEY = "2e2c61ff85593ad2cd79c1bd46d0e7fa"; // clé d'authentification d
  */
 export async function getReviews() {
     try {
-        const response = await fetch("https://api.themoviedb.org/3/movie/upcoming?api_key=" + API_KEY);
+        const response = await fetch("https://api.themoviedb.org/3/movie/upcoming?language=fr-FR&api_key=" + API_KEY);
 
         if (!response.ok) {
             throw new Error(`HTTP error! Status: ${response.status}`);
@@ -26,7 +26,7 @@ export async function getResearch(research) {
 
     //const film = research.replace(/ /g, "+") // permet de remplacer les espaces par des +
     try {
-        const response = await fetch("https://api.themoviedb.org/3/search/movie?query="+research+"&api_key="+ API_KEY);
+        const response = await fetch("https://api.themoviedb.org/3/search/movie?query="+research+"&language=fr-FR&api_key="+ API_KEY);
 
         if (!response.ok) {
             throw new Error(`HTTP error! Status: ${response.status}`);
