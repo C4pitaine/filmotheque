@@ -23,7 +23,6 @@ export async function getReviews() {
  * Permet de récupérer des films selons une recherche effectuer par l'utilisateur
  */
 export async function getResearch(research) {
-
     //const film = research.replace(/ /g, "+") // permet de remplacer les espaces par des +
     try {
         const response = await fetch("https://api.themoviedb.org/3/search/movie?query="+research+"&language=fr-FR&api_key="+ API_KEY);
@@ -39,9 +38,21 @@ export async function getResearch(research) {
     }
 }
 
+/**
+ * Permet d'afficher un film en fonction de son id
+ */
 export async function getFilm(research) {
-    const film = await getResearch(research)
-    return film[0]
+    try {
+        const response = await fetch("https://api.themoviedb.org/3/movie/"+research+"?api_key="+ API_KEY);
+        if (!response.ok) {
+            throw new Error(`HTTP error! Status: ${response.status}`);
+        }
+        const data = await response.json();
+        return data;
+    } catch (error) {
+        console.error('Fetch error:', error);
+        throw error;
+    }
 }
 
 /**

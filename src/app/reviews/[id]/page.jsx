@@ -1,7 +1,7 @@
 import { getFilm } from "@/lib/review"
 
-export default async function ReviewPage( {params: {title}}){
-    const review = await getFilm(title)
+export default async function ReviewPage( {params: {id}}){
+    const review = await getFilm(id)
     
 
     return(
