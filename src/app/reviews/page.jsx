@@ -1,18 +1,43 @@
-
+'use client'
+import { useEffect,useState } from 'react'
 import { getReviews } from '@/lib/review'
 import Link from 'next/link'
 import Image from 'next/image'
 
-export default async function reviews() {
+export default function reviews() {
 
-    const reviews = await getReviews()
+    const [inputValue,setInputValue] = useState("")
+    const [reviews,setReviews] = useState([])
+
+    const fetchReviews = async () =>{
+        const data = await getReviews()
+        setReviews(data)
+    }
+
+    useEffect(()=>{
+        fetchReviews()
+    },[])
+
+    const handleChange = (e) =>{
+        const value = e.currentTarget.value
+        setInputValue(value)
+        console.log(filteredFilms)
+    }
+
+    const filteredFilms = reviews.filter(c =>
+        c.title.toLowerCase().includes(inputValue.toLowerCase())
+    )
+
 
     return(
         <>
             <div className='wrapper'>
                 <h1 className="text-white mt-2 text-2xl">Nos films</h1>
+                <div>
+                    <input type="text" onChange={handleChange} value={inputValue}/>
+                </div>
                 <div className="flex flex-wrap justify-center items-center">
-                    {reviews.map((review)=>(
+                    {filteredFilms.map((review)=>(
                         <div key={review.id} className="carte">
                             <Link href={`/reviews/${review.title.replace(/ /g, "+")}`} className="flex flex-col items-center bg-white border border-gray-200 rounded-lg shadow md:flex-row md:max-w-xl hover:bg-gray-100 dark:border-gray-700 dark:bg-gray-800 dark:hover:bg-gray-700">
                                 <img  className="object-cover w-full rounded-t-lg h-96 md:h-auto md:w-48 md:rounded-none md:rounded-s-lg" src={`https://image.tmdb.org/t/p/w500/${review.poster_path}`} alt={`image de ${review.title}`}/>
