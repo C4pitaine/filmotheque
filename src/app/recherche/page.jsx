@@ -1,5 +1,5 @@
 'use client'
-import { useState,useEffect } from "react";
+import { useState } from "react";
 import { getResearch } from "@/lib/review";
 import Link from "next/link";
 import Image from "next/image";
@@ -52,12 +52,16 @@ export default function Recherche() {
         ))}
         </div>
       </div>
-      <Pagination 
+      {
+        itemsPerPage < reviews.length &&
+        <Pagination 
         currentPage={currentPage}
         itemsPerPage={itemsPerPage}
         length={reviews.length}
         onPageChanged={handlePageChange}
-      />
+        />
+      }
+      
     </>
   );
 }

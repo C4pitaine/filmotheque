@@ -9,18 +9,18 @@ const Pagination = (props) => {
     }
 
     return ( 
-        <div>
-            <ul className="pagination pagination-sm justify-content-center">
-                <li className={"page-item" + (props.currentPage === 1 ? " disabled" : null)}>
-                    <button className="page-link" onClick={() => props.onPageChanged(props.currentPage - 1)} >&laquo;</button>
+        <div className="flex justify-center items-center pagination">
+            <ul className="flex text-white items-center">
+                <li className={(props.currentPage === 1 ? "invisible" : null)} onClick={() => props.onPageChanged(props.currentPage - 1)}>
+                    <button className="page-link"  >&laquo;</button>
                 </li>
                 {pages.map(page => (
-                    <li key={page} className={"page-item" + (props.currentPage === page ? " active" : null)}>
-                        <button className="page-link" onClick={() => props.onPageChanged(page)}>{page}</button>
+                    <li key={page} className={"relative block rounded bg-transparent px-3 py-1.5 text-sm text-white transition-all duration-300 hover:bg-neutral-950 dark:text-white dark:hover:bg-neutral-700 dark:hover:text-white " + (props.currentPage === page ? " active" : null)} onClick={() => props.onPageChanged(page)}>
+                        <button className="page-link" >{page}</button>
                     </li>
                 ))}
-                <li className={"page-item" + (props.currentPage === pagesCount ? " disabled" : null)}>
-                    <button className="page-link" onClick={() => props.onPageChanged(props.currentPage + 1)}>&raquo;</button>
+                <li className={(props.currentPage === pagesCount ? "invisible" : null)} onClick={() => props.onPageChanged(props.currentPage + 1)}>
+                    <button className="page-link" >&raquo;</button>
                 </li>
             </ul>
         </div>
