@@ -3,6 +3,7 @@ import { useEffect,useState } from 'react'
 import { getReviews } from '@/lib/review'
 import Link from 'next/link'
 import Image from 'next/image'
+import Pagination from '../../../components/Pagination'
 
 export default function reviews() {
 
@@ -13,6 +14,8 @@ export default function reviews() {
         const data = await getReviews()
         setReviews(data)
     }
+
+    const [currentPage,setCurrentPage] = useState(1)
 
     useEffect(()=>{
         fetchReviews()
@@ -27,7 +30,14 @@ export default function reviews() {
     const filteredFilms = reviews.filter(c =>
         c.title.toLowerCase().includes(inputValue.toLowerCase())
     )
+    
+    const handlePageChange = (page) =>{
+        setCurrentPage(page)
+    }
 
+    const itemsPerPage = 10
+
+    const paginatedFilms = Pagination.getData(filteredFilms,currentPage,itemsPerPage)
 
     return(
         <>
@@ -37,7 +47,7 @@ export default function reviews() {
                     <input type="text" onChange={handleChange} value={inputValue} placeholder='Recherche'id="inputSearchReviews" className='mt-3 mb-4 p-2 rounded'/>
                 </div>
                 <div className="flex flex-wrap justify-center items-center">
-                    {filteredFilms.map((review)=>(
+                    {paginatedFilms.map((review)=>(
                         <div key={review.id} className="carte">
                             <Link href={`/reviews/${review.id}`} className="flex flex-col items-center bg-white border border-gray-200 rounded-lg shadow md:flex-row md:max-w-xl hover:bg-gray-100 dark:border-gray-700 dark:bg-gray-800 dark:hover:bg-gray-700">
                                 <Image width="250" height="150" className="object-cover w-full rounded-t-lg h-96 md:h-auto md:w-48 md:rounded-none md:rounded-s-lg" src={`https://image.tmdb.org/t/p/w500/${review.poster_path}`} alt={`image de ${review.title}`}/>
@@ -52,6 +62,16 @@ export default function reviews() {
                     ))}
                 </div>
             </div>
+            {
+                itemsPerPage < filteredFilms.length && 
+                <Pagination 
+                currentPage={currentPage}
+                itemsPerPage={itemsPerPage}
+                length={reviews.length}
+                onPageChanged={handlePageChange}
+                />
+            }
+            
         </>
     )
 }

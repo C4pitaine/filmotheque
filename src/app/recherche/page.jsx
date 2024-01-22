@@ -1,8 +1,9 @@
 'use client'
-import { useState } from "react";
+import { useState,useEffect } from "react";
 import { getResearch } from "@/lib/review";
 import Link from "next/link";
 import Image from "next/image";
+import Pagination from "../../../components/Pagination";
 
 export default function Recherche() {
   const [inputValue, setInputValue] = useState('');
@@ -18,6 +19,17 @@ export default function Recherche() {
     setReviews(fetchedReviews);
   }
 
+  const [currentPage,setCurrentPage] = useState(1)
+
+  const handlePageChange = (page) =>{
+    setCurrentPage(page)
+  }
+  
+  const itemsPerPage = 6
+
+  const paginationFilms = Pagination.getData(reviews,currentPage,itemsPerPage)
+
+
   return (
     <>
       <div className='wrapper'>
@@ -27,7 +39,7 @@ export default function Recherche() {
           <button onClick={handleClick} className="text-white bg-blue-700 hover:bg-blue-800 focus:ring-4 focus:ring-blue-300 font-medium rounded-lg text-sm px-5 py-2.5 me-2 mb-2 dark:bg-blue-600 dark:hover:bg-blue-700 focus:outline-none dark:focus:ring-blue-800 ms-3">Envoyer</button>
         </div>
         <div className="flex flex-wrap justify-center items-center">
-        {reviews.map((review)=>(
+        {paginationFilms.map((review)=>(
             <div key={review.id} className="carte">
                 <Link href={`/reviews/${review.id}`} className="flex flex-col items-center bg-white border border-gray-200 rounded-lg shadow md:flex-row md:max-w-xl hover:bg-gray-100 dark:border-gray-700 dark:bg-gray-800 dark:hover:bg-gray-700">
                     <Image width="250" height="150"  className="object-cover w-full rounded-t-lg h-96 md:h-auto md:w-48 md:rounded-none md:rounded-s-lg" src={`https://image.tmdb.org/t/p/w500/${review.poster_path}`} alt={`image de ${review.title}`}/>
@@ -40,6 +52,12 @@ export default function Recherche() {
         ))}
         </div>
       </div>
+      <Pagination 
+        currentPage={currentPage}
+        itemsPerPage={itemsPerPage}
+        length={reviews.length}
+        onPageChanged={handlePageChange}
+      />
     </>
   );
 }
