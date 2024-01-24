@@ -1,6 +1,6 @@
 'use client'
 
-export default function contact() {
+export default function Contact() {
 
     const handleClick = () =>{
         const input = document.querySelectorAll('input')

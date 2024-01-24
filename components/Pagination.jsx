@@ -9,13 +9,13 @@ const Pagination = (props) => {
     }
 
     return ( 
-        <div className="flex justify-center items-center pagination">
+        <div className="flex justify-center items-center pagination mb-4">
             <ul className="flex text-white items-center">
                 <li className={(props.currentPage === 1 ? "invisible" : null)} onClick={() => props.onPageChanged(props.currentPage - 1)}>
                     <button className="page-link"  >&laquo;</button>
                 </li>
                 {pages.map(page => (
-                    <li key={page} className={"relative block rounded bg-transparent px-3 py-1.5 text-sm text-white transition-all duration-300 hover:bg-neutral-950 dark:text-white dark:hover:bg-neutral-700 dark:hover:text-white " + (props.currentPage === page ? " active" : null)} onClick={() => props.onPageChanged(page)}>
+                    <li key={page} className={"relative block rounded bg-transparent px-3 py-1.5 mx-1 text-sm text-white transition-all duration-300 hover:bg-neutral-950 dark:text-white dark:hover:bg-neutral-700 dark:hover:text-white " + (props.currentPage === page ? " active" : null)} onClick={() => props.onPageChanged(page)}>
                         <button className="page-link" >{page}</button>
                     </li>
                 ))}

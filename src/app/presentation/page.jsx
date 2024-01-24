@@ -1,13 +1,14 @@
 import { getResearch } from "@/lib/review"
+import Image from "next/image"
 
-export default async function presentation() {
+export default async function Presentation() {
 
     return(
         <>
            <div className="wrapper">
                 <h3 className="text-white mt-2 mb-5 text-2xl">Qui sommes nous :</h3>
                 <div className="flex justify-center items-center">
-                    <img src="./images/cinema.png" alt="Image cinema" className="mt-3 mb-3"/>
+                    <Image width="300" height="500" src="/images/cinema.png" alt="Image cinema" className="mt-3 mb-3"/>
                 </div>
                 <p  className="text-white mb-3">Lorem ipsum dolor sit amet consectetur adipisicing elit. Corrupti, iste harum rerum dolore veritatis soluta quos officia incidunt, enim eius odit labore in nisi quisquam praesentium aut nulla nihil, placeat doloribus alias eaque amet iusto officiis cum! Deserunt sit ipsum quibusdam reprehenderit dolorum eos nulla! Deserunt expedita illo molestias amet sit. Voluptate veniam, eius fuga et, quae eveniet doloremque, iste animi aperiam laboriosam ea quos maxime ratione quas non exercitationem minus incidunt possimus beatae natus. Architecto aliquam odit beatae laboriosam officiis non error velit. Possimus ducimus consectetur nostrum reprehenderit, neque praesentium, cumque non aperiam molestiae, quo optio quod quia ut error? Error adipisci hic harum neque? Quaerat pariatur, incidunt impedit laboriosam expedita saepe eligendi, ipsum quis sapiente maxime illo quos molestiae est, provident obcaecati repudiandae sit tempora quia dolores praesentium a ipsa. Fuga temporibus ipsum ad nihil cumque, rem, corrupti facere error dignissimos sequi odit inventore quas voluptatum nulla voluptatibus?</p>
                 <p  className="text-white mb-3">Lorem ipsum dolor sit amet consectetur adipisicing elit. Corrupti, iste harum rerum dolore veritatis soluta quos officia incidunt, enim eius odit labore in nisi quisquam praesentium aut nulla nihil, placeat doloribus alias eaque amet iusto officiis cum! Deserunt sit ipsum quibusdam reprehenderit dolorum eos nulla! Deserunt expedita illo molestias amet sit. Voluptate veniam, eius fuga et, quae eveniet doloremque, iste animi aperiam laboriosam ea quos maxime ratione quas non exercitationem minus incidunt possimus beatae natus. Architecto aliquam odit beatae laboriosam officiis non error velit. Possimus ducimus consectetur nostrum reprehenderit, neque praesentium, cumque non aperiam molestiae, quo optio quod quia ut error? Error adipisci hic harum neque? Quaerat pariatur, incidunt impedit laboriosam expedita saepe eligendi, ipsum quis sapiente maxime illo quos molestiae est, provident obcaecati repudiandae sit tempora quia dolores praesentium a ipsa. Fuga temporibus ipsum ad nihil cumque, rem, corrupti facere error dignissimos sequi odit inventore quas voluptatum nulla voluptatibus?</p>

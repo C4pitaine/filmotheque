@@ -5,6 +5,7 @@
 
 .slide{
     min-height:100vh;
+    overflow: hidden;
 }
 
 .wrapper{
@@ -23,7 +24,7 @@
 
 .carte{
     margin: 25px;
-    min-width:40%;
+    min-width:45%;
 }
 
 .filmImage{
