@@ -4,7 +4,7 @@ const API_KEY = "2e2c61ff85593ad2cd79c1bd46d0e7fa"; // clé d'authentification d
  * Permet d'afficher sur la HomePage les derniers films 
  */
 export async function getLastReviews(url) {
-    const lastReviews = await getDataResults(url+API_KEY)
+    const lastReviews = await getDataResults(url)
 
     const tabLastReviews= [lastReviews[0],lastReviews[1],lastReviews[2],lastReviews[4]]
     return tabLastReviews
