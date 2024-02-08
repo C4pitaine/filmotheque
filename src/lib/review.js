@@ -43,7 +43,7 @@ export async function getResearch(research) {
  */
 export async function getFilm(research) {
     try {
-        const response = await fetch("https://api.themoviedb.org/3/movie/"+research+"?api_key="+ API_KEY);
+        const response = await fetch("https://api.themoviedb.org/3/movie/"+research+"?language=fr-FR&api_key="+ API_KEY);
         if (!response.ok) {
             throw new Error(`HTTP error! Status: ${response.status}`);
         }

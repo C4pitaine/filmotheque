@@ -7,6 +7,12 @@ module.exports = {
                 port: "",
                 pathname: "/**"
             },
+            {
+                protocol: "http",
+                hostname: "placehold.it",
+                port: "",
+                pathname: "/**"
+            },
         ],
     },
 }
