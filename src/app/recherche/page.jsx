@@ -35,7 +35,7 @@ export default function Recherche() {
       <div className='wrapper'>
         <h4 className="text-white mt-4 mb-3 text-2xl">Vous recherchez un film en particulier ?</h4>
         <div>
-          <input type="text" onChange={handleChange} value={inputValue} id="researchInput" placeholder='Recherche' className='mt-3 mb-4 p-2 rounded'/>
+          <input type="text" onChange={handleChange} value={inputValue} id="researchInput" placeholder='Recherche' className='mt-3 mb-4 p-2 rounded w-100'/>
         </div>
         <div className="flex flex-wrap justify-center items-center">
         {paginationFilms.map((review)=>(
