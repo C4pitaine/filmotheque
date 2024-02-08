@@ -1,6 +1,6 @@
 'use client'
 import { useState } from "react";
-import { getResearch } from "@/lib/review";
+import { getDataResults } from "@/lib/review";
 import Link from "next/link";
 import Image from "next/image";
 import moment from "moment";
@@ -13,7 +13,7 @@ export default function Recherche() {
   const handleChange = async (e) => {
     const value = e.target.value;
     setInputValue(value);
-    const fetchedReviews = await getResearch(value);
+    const fetchedReviews = await getDataResults("https://api.themoviedb.org/3/search/movie?query="+value+"&language=fr-FR&api_key=");
     setReviews(fetchedReviews);
     setCurrentPage(1)
   }

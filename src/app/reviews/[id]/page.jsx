@@ -1,9 +1,9 @@
-import { getFilm } from "@/lib/review"
+import { getData } from "@/lib/review"
 import Image from "next/image"
 import moment from "moment"
 
 export default async function ReviewPage( {params: {id}}){
-    const review = await getFilm(id)
+    const review = await getData("https://api.themoviedb.org/3/movie/"+id+"?language=fr-FR&api_key=")
     
     const formatDate = (date) => moment(date).format('DD-MM-YYYY')
 

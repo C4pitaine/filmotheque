@@ -4,7 +4,7 @@ import Image from "next/image"
 import moment from "moment"
 
 export default async function Homepage(){
-    const lastReviews = await getLastReviews()
+    const lastReviews = await getLastReviews("https://api.themoviedb.org/3/movie/upcoming?language=fr-FR&api_key=")
     const formatDate = (date) => moment(date).format("YYYY")
     return (
         <>

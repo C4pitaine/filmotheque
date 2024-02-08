@@ -1,6 +1,6 @@
 'use client'
 import { useEffect, useState } from 'react'
-import { getReviews } from '@/lib/review'
+import { getDataResults } from '@/lib/review'
 import Link from 'next/link'
 import Image from 'next/image'
 import moment from 'moment'
@@ -12,7 +12,7 @@ export default function Reviews() {
     const [reviews,setReviews] = useState([])
 
     const fetchReviews = async () =>{
-        const data = await getReviews()
+        const data = await getDataResults("https://api.themoviedb.org/3/movie/upcoming?language=fr-FR&api_key=")
         setReviews(data)
     }
 
