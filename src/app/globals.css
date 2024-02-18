@@ -14,10 +14,6 @@
     overflow: hidden;
 }
 
-.inputNotValid{
-    background-color: red;
-}
-
 .invisible{
     display: none;
 }
@@ -49,6 +45,15 @@
 
 .pagination ul li{
     cursor: pointer;
+}
+
+.inputNotValid + .error{
+    display: block;
+}
+
+.error{
+    color:red;
+    display: none;
 }
 
 @media all and (max-width:1200px){
