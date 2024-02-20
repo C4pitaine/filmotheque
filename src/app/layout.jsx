@@ -13,7 +13,6 @@ export const metadata = {
 export default function RootLayout({ children }) {
   return (
     <html lang="en">
-      <link rel="icon" href="../public/images/cinema.png" sizes="any" />
       <meta name="google" content="notranslate"/>
       <meta name="robots" content="noindex,nofollow"/>
       <body className={inter.className}>
