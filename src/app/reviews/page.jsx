@@ -51,8 +51,8 @@ export default function Reviews() {
                 </div>
                 <div className="flex flex-wrap justify-center items-center">
                 {reviews.length === 0 && (
-                    <div className="flex">
-                        <div className="me-3">Chargement des films</div>
+                    <div className="flex items-center text-white">
+                        <div className="me-3 text-lg">Chargement des films</div>
                         <Image width="50" height="50" src="/images/loading-gif.gif" alt="Gif Chargement" />
                     </div>
                 )}
