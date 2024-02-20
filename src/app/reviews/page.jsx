@@ -51,7 +51,10 @@ export default function Reviews() {
                 </div>
                 <div className="flex flex-wrap justify-center items-center">
                 {reviews.length === 0 && (
-                    <Image width="50" height="50" src="/images/loading-gif.gif" alt="Gif Chargement" />
+                    <div className="flex">
+                        <div className="me-3">Chargement des films</div>
+                        <Image width="50" height="50" src="/images/loading-gif.gif" alt="Gif Chargement" />
+                    </div>
                 )}
                     {paginatedFilms.map((review)=>(
                         <div key={review.id} className="carte">
