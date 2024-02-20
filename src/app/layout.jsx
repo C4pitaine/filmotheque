@@ -7,12 +7,13 @@ const inter = Inter({ subsets: ['latin'] })
 
 export const metadata = {
   title: 'Filmotheque',
-  description: 'Nous affichons des films',
+  description: 'Trouvez les films que vous recherchez'
 }
 
 export default function RootLayout({ children }) {
   return (
     <html lang="en">
+      <link rel="icon" href="/images/cinema.png" sizes="any" />
       <body className={inter.className}>
         <header> <NavBar /></header>
         <main>
