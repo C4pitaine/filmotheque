@@ -14,6 +14,8 @@ export default function RootLayout({ children }) {
   return (
     <html lang="en">
       <link rel="icon" href="/images/cinema.png" sizes="any" />
+      <meta name="google" content="notranslate"/>
+      <meta name="robots" content="noindex,nofollow"/>
       <body className={inter.className}>
         <header> <NavBar /></header>
         <main>
